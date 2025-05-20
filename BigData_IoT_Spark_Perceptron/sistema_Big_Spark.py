@@ -7,6 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from pyspark.sql import SparkSession
 
+
+
+st.set_page_config(layout="wide")
+
 # --- 1. Spark Setup com st.cache_resource para persistência ---
 @st.cache_resource
 def get_spark_session():
@@ -60,7 +64,7 @@ def processar_e_treinar_modelo(num_pontos_simulados=10000):
     return perceptron, acuracia, dados_pandas_originais # Retornar dados originais para plot
 
 # --- Streamlit App ---
-st.set_page_config(layout="wide")
+
 st.title("Monitoramento IoT com Perceptron e Spark (Exemplo)")
 
 # Treina o modelo (cacheado)
